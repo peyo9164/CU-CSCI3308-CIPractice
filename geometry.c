@@ -69,3 +69,18 @@ void coord_2d_midpoint(coord_2d_t* mid, const coord_2d_t* a, const coord_2d_t* b
     mid->y = ((a->y + b->y) / 2.0 );
 
 }
+
+double coord_2d_area_tringle(const coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c)
+{
+	int area = 0;
+	
+	area = ((a->x)*((b->y)-(c->y)) +
+			(b->x)*((a->y)-(c->y)) +
+			(c->x)*((a->y)-(b->y)));
+			
+	area = area/2;
+			
+	area = fabs(area);
+	
+	return area;
+}
